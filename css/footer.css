@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #f2e8f0;
+  width: 100vw;
+}
+
+.collapse {
+  align-self: center;
+}
+
+.collapse a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  padding: 0rem 0.5rem;
+}
+
+.collapse a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: "Finger Paint";
+  padding: 0.5rem 1.5rem;
+  color: #212121;
+}
+
+.navbar img {
+  height: 10vh;
+  align-self: center;
+  padding-left: 0.4rem;
+}
+
+i {
+  padding-right: 0.4rem;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}

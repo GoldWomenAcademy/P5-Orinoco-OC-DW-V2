@@ -1,0 +1,301 @@
+@media (max-width: 650px) {
+  .navbar {
+    flex-flow: column nowrap !important;
+  }
+  .navbar img {
+    padding-top: 1rem;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  h1 {
+    padding: 1rem;
+    margin: 0rem;
+  }
+
+  h3 {
+    font-size: 54px;
+  }
+
+  .collapse {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: 1rem;
+  }
+  .collapse a {
+    line-height: 2rem;
+  }
+  .collapse i {
+    padding-right: 1rem !important;
+  }
+}
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #f2e8f0;
+  margin: auto;
+  justify-content: flex-start;
+}
+.navbar img {
+  height: 10vh;
+  align-self: center;
+  padding-left: 0.4rem;
+}
+.navbar i {
+  padding-right: 0.4rem;
+}
+
+.collapse {
+  align-self: center;
+}
+
+.collapse a {
+  color: #212121;
+  text-decoration: none;
+  padding: 0rem 0.5rem;
+  font-size: 1.50rem;
+}
+
+.collapse a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: "Finger Paint";
+  padding: 0.5rem 1.5rem;
+  color: #212121;
+}
+
+@media (max-width: 500px) {
+  .social-text {
+    display: none;
+  }
+
+  i {
+    transform: scale(1.5);
+    padding: 0rem 20rem;
+  }
+}
+@media (max-width: 650px) {
+  .navbar-footer {
+    flex-flow: column nowrap !important;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .social {
+    padding: 0rem 0rem 1rem 0rem !important;
+  }
+
+  .dropdown-content {
+    width: 98vw;
+    justify-content: space-between;
+    margin: auto;
+  }
+}
+.navbar-footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: #f2e8f0;
+  margin: auto;
+}
+.navbar-footer a {
+  color: #212121;
+  text-decoration: none;
+  padding: 0rem 0.5rem;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+.dropbtn {
+  background-color: #f2e8f0;
+  border: none;
+  padding: 16px;
+  font-size: 1.2rem;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  bottom: 55px;
+  background-color: #f2e8f0;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #212121;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f2e8f0;
+  text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #f2e8f0;
+  color: #f2e8f0;
+}
+
+.social {
+  align-self: center;
+  justify-self: flex-end;
+  padding-right: 1rem;
+  font-size: 1.2rem;
+}
+
+i {
+  padding: 0.5rem 0.5rem;
+}
+
+@media (max-width: 1150px) {
+  #btnCustom {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media (max-width: 850px) {
+  body {
+    background-color: #f2e8f0 !important;
+  }
+
+  .Norbert, .Arnold, .Carl, .Gustav, .Garfunkel {
+    background-color: #f2e8f0 !important;
+    grid-template-areas: "name name" "photo photo" "info info" "button button" !important;
+  }
+  .Norbert a, .Arnold a, .Carl a, .Gustav a, .Garfunkel a {
+    margin: auto;
+  }
+  .Norbert .teddyPhoto, .Arnold .teddyPhoto, .Carl .teddyPhoto, .Gustav .teddyPhoto, .Garfunkel .teddyPhoto {
+    margin: auto;
+    max-width: 60vw;
+  }
+  .Norbert .teddyInfo, .Arnold .teddyInfo, .Carl .teddyInfo, .Gustav .teddyInfo, .Garfunkel .teddyInfo {
+    text-align: center;
+  }
+}
+body {
+  margin: 0rem;
+  background-color: #ffffff;
+}
+
+header {
+  z-index: 1;
+}
+
+h2 {
+  text-align: center;
+}
+
+#product {
+  padding: 3rem 0rem;
+}
+
+#mainPage {
+  text-align: center;
+}
+#mainPage li {
+  list-style: none;
+  line-height: 1.5;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.Norbert, .Arnold, .Carl, .Gustav, .Garfunkel {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  grid-template-rows: auto;
+  grid-template-areas: "photo name" "photo info" "photo button";
+  border: 10px double #ffffff;
+  max-width: 75vw;
+  margin: auto;
+  margin-bottom: 1em;
+  background-color: #f2e8f0;
+}
+
+#mainPage .teddyName { 
+  display: flex;
+  grid-area: name;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+  justify-content: center;
+  align-self: center;
+}
+
+.teddyInfo {
+  grid-area: info;
+  text-align: center;
+  padding-left: 0rem;
+}
+
+.teddyPhoto {
+  grid-area: photo;
+  max-width: 40vw;
+}
+
+#btnCustom {
+  grid-area: button;
+  font-size: 1.6rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-height: 6vh;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  background-color: #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #333333;
+  margin: 0rem auto 1.5rem auto;
+}
+
+@media (max-width: 850px) {
+
+  #mainPage .teddyName {
+    -ms-grid-column-span: 2;
+  }
+
+  .teddyInfo {
+    -ms-grid-column-span: 2;
+  }
+
+  .teddyPhoto {
+    -ms-grid-column-span: 2;
+  }
+
+  #btnCustom {
+    -ms-grid-column-span: 2;
+  }
+}
+#btnCustom i {
+  padding-right: 1rem;
+  color: #333333;
+}

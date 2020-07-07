@@ -1,0 +1,390 @@
+@media (max-width: 650px) {
+  .navbar {
+    flex-flow: column nowrap !important;
+  }
+  .navbar img {
+    padding-top: 1rem;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  h1 {
+    padding: 1rem;
+    margin: 0rem;
+  }
+
+  .collapse {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: 1rem;
+  }
+  .collapse a {
+    line-height: 2rem;
+  }
+  .collapse i {
+    padding-right: 1rem !important;
+  }
+}
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #f2e8f0;
+  margin: auto;
+  justify-content: flex-start;
+}
+.navbar img {
+  height: 10vh;
+  align-self: center;
+  padding-left: 0.4rem;
+}
+.navbar i {
+  padding-right: 0.4rem;
+}
+
+.collapse {
+  align-self: center;
+}
+
+.collapse a {
+  color: #212121;
+  text-decoration: none;
+  padding: 0rem 0.5rem;
+  font-size: 1.15rem;
+}
+
+.collapse a:hover {
+  color: #212121;
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: "Finger Paint";
+  padding: 0.5rem 1.5rem;
+  color: #212121;
+}
+
+@media (max-width: 500px) {
+  .social-text {
+    display: none;
+  }
+
+  i {
+    transform: scale(1.5);
+    padding: 0rem 20rem;
+  }
+}
+@media (max-width: 650px) {
+  .navbar-footer {
+    flex-flow: column nowrap !important;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .social {
+    padding: 0rem 0rem 1rem 0rem !important;
+  }
+
+  .dropdown-content {
+    width: 98vw;
+    justify-content: space-between;
+    margin: auto;
+  }
+}
+.navbar-footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: #f2e8f0;
+  margin: auto;
+}
+.navbar-footer a {
+  color: #212121;
+  text-decoration: none;
+  padding: 0rem 0.5rem;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+.dropbtn {
+  background-color: #f2e8f0;
+  color: #212121;
+  padding: 16px;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  bottom: 55px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #343a40;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #343a40;
+}
+
+.social {
+  align-self: center;
+  justify-self: flex-end;
+  padding-right: 1rem;
+  font-size: 1.2rem;
+}
+
+i {
+  padding: 0.5rem 0.5rem;
+}
+
+@media (max-width: 850px) {
+  .teddyImport {
+    grid-template-areas: "name name" "photo photo" "info info" "quantity quantity" "panier panier" !important;
+    padding-top: 0rem !important;
+  }
+
+  a {
+    margin: auto;
+  }
+
+  .teddyPhoto {
+    margin: auto;
+    max-width: 60vw;
+  }
+
+  .teddyInfo {
+    text-align: center;
+    margin-bottom: 0rem;
+  }
+
+  .checkout {
+    max-width: 60vw !important;
+    font-size: 1.3rem;
+  }
+
+  .quantityDiv {
+    position: relative;
+    padding: 1.5rem 0rem;
+    bottom: 1rem;
+  }
+
+  .teddyColorLayout {
+    padding-top: 1rem;
+    display: flex !important;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .teddyColors {
+    bottom: 11vh !important;
+  }
+
+  .checkout {
+    top: 11vh !important;
+  }
+
+  select {
+    height: 3.5vh !important;
+  }
+}
+body {
+  margin: 0rem;
+}
+
+#container {
+  background-color: #ffffff;
+}
+
+.teddyImport {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: auto;
+  grid-template-areas: "photo name" "photo quantity" "photo info" "photo ." ". panier";
+  max-width: 95vw;
+  margin: auto;
+  margin-bottom: 1em;
+  padding-top: 2rem;
+}
+
+.teddyName {
+  grid-area: name;
+  font-size: 1.8rem;
+}
+
+select {
+  display: table-row;
+  height: 3.3vh;
+  overflow: hidden;
+  font-size: 1.3rem;
+}
+
+select::after {
+  content: none;
+}
+
+option {
+  display: table-cell;
+  font-size: 1.3rem;
+}
+
+.quantityDiv {
+  grid-area: quantity;
+  font-size: 1.4rem;
+}
+.quantityDiv input {
+  transform: scale(1.4);
+  max-width: 50vw;
+  min-width: 20vw;
+  text-align: center;
+}
+
+.teddyInfo {
+  grid-area: info;
+  text-align: center;
+  padding-left: 0rem;
+}
+
+.teddyPhoto {
+  margin: auto;
+  grid-area: photo;
+  max-width: 35vw;
+  box-shadow: 3px 2px 2px 1.5px rgba(145, 133, 133, 0.2);
+}
+
+#product-pull {
+  text-align: center;
+}
+#product-pull li {
+  list-style: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1rem 2.5rem;
+}
+#product-pull li#price {
+  font-weight: bold;
+}
+
+.checkout {
+  transform: scale(1.4);
+  position: relative;
+  top: 3.5vh;
+  flex: 1;
+  display: flex;
+  margin: auto;
+  color: #212121;
+  background-color: #f2e8f0;
+  max-width: 30vw;
+  grid-area: panier;
+  justify-content: flex-end;
+}
+
+@media (max-width: 850px) {
+  .teddyName {
+    -ms-grid-column-span: 2;
+  }
+  .quantityDiv {
+    -ms-grid-column-span: 2;
+  }
+  .teddyInfo {
+    -ms-grid-column-span: 2;
+  }
+  .teddyPhoto {
+    -ms-grid-column-span: 2;
+  }
+  .checkout {
+    -ms-grid-column-span: 2;
+  }
+}
+.checkout .icon-card {
+  font-size: 18px;
+  justify-self: center;
+}
+
+.btn-default {
+  flex: 1;
+  transition: 0.4s;
+  font-weight: 700;
+  color: #212121;
+  background-color: #f2e8f0;
+  text-transform: uppercase;
+}
+
+.teddyColorLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-areas: "color ." ". .";
+}
+
+.teddyColors {
+  position: relative;
+  bottom: 4vh;
+  grid-area: color;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.5rem;
+  font-size: 1.4rem;
+  margin: auto;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  text-align: center;
+}
+.teddyColors option {
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
+label {
+  padding-bottom: 1.5rem;
+}
+
+.panierLink {
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+.panierLink button {
+  font-size: 1.5rem;
+  background-color: #f2e8f0;
+  color: #212121;
+}
+.panierLink button:hover {
+  color: #f2e8f0;
+  background-color: #212121;
+}

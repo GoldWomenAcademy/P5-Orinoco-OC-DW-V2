@@ -1,0 +1,183 @@
+@media (max-width: 500px) {
+  .social-text {
+    display: none;
+  }
+
+  i {
+    transform: scale(1.5);
+    padding: 0rem 20rem;
+  }
+}
+@media (max-width: 650px) {
+  .navbar-footer {
+    flex-flow: column nowrap !important;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .social {
+    padding: 0rem 0rem 1rem 0rem !important;
+  }
+
+  .dropdown-content {
+    width: 98vw;
+    justify-content: space-between;
+    margin: auto;
+  }
+}
+.navbar-footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: #343a40;
+  margin: auto;
+}
+.navbar-footer a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  padding: 0rem 0.5rem;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+.dropbtn {
+  background-color: #343a40;
+  color: white;
+  padding: 16px;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  bottom: 55px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #343a40;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #343a40;
+}
+
+.social {
+  align-self: center;
+  justify-self: flex-end;
+  padding-right: 1rem;
+  font-size: 1.2rem;
+}
+
+i {
+  padding: 0.5rem 0.5rem;
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    flex-flow: column nowrap !important;
+  }
+  .navbar img {
+    padding-top: 1rem;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  h1 {
+    padding: 1rem;
+    margin: 0rem;
+  }
+
+  .collapse {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: 1rem;
+  }
+  .collapse a {
+    line-height: 2rem;
+  }
+  .collapse i {
+    padding-right: 1rem !important;
+  }
+}
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #343a40;
+  margin: auto;
+  justify-content: flex-start;
+}
+.navbar img {
+  height: 10vh;
+  align-self: center;
+  padding-left: 0.4rem;
+}
+.navbar i {
+  padding-right: 0.4rem;
+}
+
+.collapse {
+  align-self: center;
+}
+
+.collapse a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  padding: 0rem 0.5rem;
+  font-size: 1.15rem;
+}
+
+.collapse a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: "Finger Paint";
+  padding: 0.5rem 1.5rem;
+  color: #fff;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 10rem 3rem;
+  line-height: 1.6;
+  background-color: #eca7a7;
+  margin: 0;
+}
