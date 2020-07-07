@@ -1,0 +1,379 @@
+@import 'header.scss';
+@import 'footer.scss';
+
+@media (max-width: 550px) {
+   #teddyContainer .mainContainer {
+        grid-template-areas:
+        'photo'
+        'name'
+        'color'
+        'quantity'
+        'price'
+        'totalPrice' !important;
+        & .teddyName {
+            padding: 0rem;
+        }
+        & .teddyName h2{
+            padding: 0.5rem 0rem;
+            margin: 0rem 0rem;
+        }
+        & .teddyColor {
+            padding: 0rem 0rem;
+            & p {
+                margin: 0rem 0rem;
+                padding: 0.5rem 0rem;
+            }
+        }
+        & .teddyQuantity p{
+            margin: 0rem 0rem;
+            padding: 0.5rem 0rem;
+        }
+        & .teddyImg img{
+            margin-top: 1rem;
+            max-width: 50vw;
+        }
+        & .teddyPrix p {
+            margin: 1rem 0rem;
+        }
+        & .TeddyTotalPrice {
+            & h3 {
+                margin: 1rem 0rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .mainContainer {
+        grid-template-columns: auto !important;
+        grid-template-areas: 
+        '. photo .'
+        'name quantity color'
+        'totalPrice quantity price' !important;
+        & p {
+            font-size: 1.6rem !important;
+        }
+    }
+    .teddyImg {
+        text-align: center;
+        padding-top: 1rem;
+    }
+    .teddyPrix {
+        margin: auto 0rem;
+        padding-right: 0.5rem;
+    }
+    .TeddyTotalPrice {
+        padding-left: 0.5rem;
+    }
+    .teddyName {
+        margin: auto 0rem;
+        padding: 0rem !important;
+        & h2 {
+            font-size: 2.6rem;
+        }
+    }
+    .teddyQuantity {
+        padding-top: 1rem;
+    }
+    .teddyColor {
+        margin: auto auto;
+        font-size: 1.4rem;
+        text-align: center;
+        padding-right: 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .mainContainer {
+        & p {
+            font-size: 1.4rem;
+        }
+        & .teddyName {
+            font-size: 1.7rem;
+        }
+        & .TeddyTotalPrice {
+            padding-right: 0.5rem;
+        }
+    }
+}
+
+@media (min-width: 1150px) {
+    .teddyName {
+        font-size: 2.2rem;
+    }
+    p {
+        font-size: 1.8rem !important;
+    }
+}
+
+
+header {
+    z-index: 1;
+}
+
+body {
+    margin: 0rem;
+    background-color: #f2f2f2;
+    overflow-x: hidden;   
+}
+
+#checkoutTitle {
+    margin: auto;
+    text-align: center;
+    line-height: 1.5;
+    padding: 2rem 0rem;
+    max-width: 70vw;
+}
+
+#container {
+    background-color: rgb(228, 214, 214);
+    padding-bottom: 3rem;
+}
+
+#teddyContainer {
+    padding-bottom: 1.5rem;
+}
+
+#teddyContainer img {
+    margin: auto;
+    grid-area: photo;
+    max-width: 30vw;
+    border: 10px solid #444;
+    box-shadow: 3px 2px 2px 1.5px rgba(145, 133, 133, 0.6);
+}
+
+.mainContainer {
+    background-color: rgb(241, 234, 234);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 0.5fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'photo name quantity totalPrice'
+    'photo name quantity totalPrice'
+    'photo color quantity price';
+    max-width: 95vw;
+    margin: auto;
+    margin-bottom: 1em;
+    border: 1px solid black;
+}
+
+.teddyImg {
+    grid-area: photo;
+    margin: auto 0rem;
+}
+
+.teddyName {
+    grid-area: name;
+    text-align: center;
+    padding: 1.5rem 1rem 0rem;
+}
+
+.teddyColor {
+    grid-area: color;
+    font-size: 1.2rem;
+    margin: auto;
+}
+
+.teddyQuantity {
+    grid-area: quantity;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: auto 0rem;
+}
+
+.btn-up {
+    &:hover {
+        background-color: rgb(64, 161, 64);
+    }
+    & i {
+        transform: scale(1.6);
+    }
+    background-color: rgb(96, 211, 96);
+    cursor: pointer;
+}
+
+.btn-down {
+    &:hover {
+        background-color: rgb(206, 47, 47);
+    }
+    & i {
+        transform: scale(1.6);
+    }
+    background-color: rgb(248, 78, 78);
+    cursor: pointer;
+}
+
+.teddyPrix {
+    grid-area: price;
+}
+
+.teddyPrice {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.TeddyTotalPrice {
+    grid-area: totalPrice;
+    text-align: center;
+    margin: auto 0rem;
+    font-size: 1.3rem;
+    &-Amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
+
+#viderPanier {
+    text-align: center;
+    transform: scale(1.4);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    background-color: #e0513e;
+    max-width: fit-content;
+    margin: 0rem auto 1rem auto;
+    
+    & button {
+        cursor: pointer;
+        &:hover {
+            color: #0090e3;
+        }
+    }
+    & i {
+        color: #fff;
+        font-size: 22px;
+            padding: 5px 8px;
+            justify-self: center;
+    }
+}
+
+#finalPrice {
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+    & h2 {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+}
+
+#finalCheckout {
+    padding-bottom: 1rem;
+}
+
+.doubleButton {
+    display: flex;
+    flex-direction: column; 
+}
+
+.checkout {
+    transform: scale(1.4);
+    flex: 1;
+    display: flex;
+    margin: 2rem auto 0rem auto;
+    color: #fff;
+    align-items: center;
+    background-color: #0090e3;
+    max-width: fit-content;
+    justify-content: flex-end;
+    & button {
+        cursor: pointer;
+        &:hover {
+            color: #0090e3;
+        }
+    }
+    & .icon-card {
+            font-size: 22px;
+            padding: 5px 8px;
+            justify-self: center;
+    }
+  }
+
+  #checkoutTitle{
+      margin: auto;
+  }
+
+input[type=text], input[type=email], select, textarea {
+    font-size: 1.3rem;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    border-left: 0.6rem solid;
+    border-left-color: palegreen;
+    transition: all .5s ease-out;
+  }
+
+  input[type=text]:focus, input[type=email]:focus {
+    outline-color: rgb(177, 40, 25);
+}
+
+  input[type=text]:valid:focus, input[type=email]:valid:focus {
+    outline-color: rgb(3, 150, 3);
+}
+  
+  #confirmOrder {
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    & :hover {
+    background-color: #45a049;
+  }
+  }
+
+
+
+  input:invalid {
+    border-left-color: salmon;
+  }
+
+  input:invalid:focus {
+      background-color: rgba(192, 218, 241, 0.3);
+  }
+
+  #form {
+    display: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 1.7rem;
+    max-height: 90vh;
+    max-width: 93vw;
+    & label {
+        font-size: 1.3rem;  
+    }
+    & .cancel {
+        font-size: 1.3rem;
+        background-color: #b31515;
+        margin: 1.5rem 0rem;
+        padding: 0.7rem 0rem;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        &:hover {
+            background-color: #941515 !important;
+        }
+    }
+    & .buttons {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        padding: 1rem 1.2rem;
+        border: none;
+        cursor: pointer;
+        margin-bottom:10px;
+        opacity: 0.8;
+        text-align: center;
+        }
+  }
