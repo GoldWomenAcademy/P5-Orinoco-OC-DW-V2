@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Panier Oriourson |   votre commande">
+        <meta name="author" content="Fati Pereira | Développeuse Web">
+        <link rel="stylesheet" href="../css/checkout-page.css">
+        <link href="https://fonts.googleapis.com/css?family=Finger+Paint&display=swap" rel="stylesheet">
+        <title>Panier | Oriourson | Votre commande !</title>
+    </head>
+    <body onload="teddyGet()">
+        <header>
+            <nav class="navbar">   
+                <h1>Oriourson</h1>
+                <div class="navbar-responsive collapse">
+                    <a class="nav-item nav-link" href="index.html"><i class="fas fa-home"></i></a>
+                </div>
+            </nav>
+        </header>       
+        <div id="container">
+            <div class="hiddenOnForm">
+                <h2 id="checkoutTitle">
+                </h2>             
+                <section id="teddyContainer">
+                </section>
+                <section id="finalPrice">
+                    <h2>Prix total du panier</h2>
+                    <h2 id="finalCheckout"></h2>
+                    <div class="doubleButton" id="addBtn">
+                        <section id="viderPanier">
+                            <button
+                                type="button";
+                                id="emptyCart";
+                                onclick="emptyCart()";>
+                                Vider le panier 
+                            </button>
+                            <i class="fas fa-trash"></i>
+                        </section>
+                        <section class="checkout" id="confirmPanier">
+                            <button 
+                                type="button";
+                                id="confirmCart";
+                                onclick="confirmCart()";
+                                class="btn-Confirm";>
+                                Confirmer le panier
+                            </button>
+                            <i class="fas fa-shopping-cart icon-card"></i>
+                        </section>
+                    </div>
+                </section>
+            </div>
+            <section id="form">
+                <h2 class="title-form">Complétez le formulaire de livraison.</h2>
+                <div id="onclick--form">
+                    <form class="form-container" id="postData">
+                        <label for="firstName"></label>
+                        <input type="text" name="firstName" placeholder="Votre prénom..." pattern="[a-z-'éèA-Z]+" id="firstName" maxlength="20" required>
+                        <label for="lastName"></label>
+                        <input type="text" name="lastName" placeholder="Votre nom..." pattern="[a-z-'éèA-Z]+" id="lastName" maxlength="30" required>
+                        <label for="address"></label>
+                        <input type="text" name="address" placeholder="Votre adresse..." pattern="[0-9 'éèa-zA-Z]+" id="address" maxlength="60" required>
+                        <label for="city"></label>
+                        <input type="text" name="city" placeholder="Votre ville..." pattern="[a-z-'éè A-Z]+" id="city" maxlength="35" required>
+                        <label for="email"></label>
+                        <input type="email" name="email" placeholder="exemple123@test.com" id="email" required>
+                        <div class="buttons">
+                            <button type="button" id="confirmOrder" onclick="orderTeddies()">Valider</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <nav class="navbar-footer"> 
+                <div class="dropdown">
+                    <button class="dropbtn">Informations</button>
+                    <div class="dropdown-content">
+                        <a href="#">A propos</a>
+                        <a href="#">Conditions</a>
+                        <a href="#">FAQ</a>
+                    </div>
+              </div>
+              <div class="social">
+                <a href="https://www.facebook.com/monteddybear" target="_blank"><span class="social-text"></span><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/teddy-bear-limited" target="_blank"><span class="social-text"></span><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/aniteddys" target="_blank"><span class="social-text"></span><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/oldteddybearshp" target="_blank"><span class="social-text"></span><i class="fab fa-twitter"></i></a>
+            </div>
+            </nav>
+        </footer>
+        <script src="https://kit.fontawesome.com/c838d79e10.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script defer src="checkout.js"></script>
+
+    </body>
+</html>
