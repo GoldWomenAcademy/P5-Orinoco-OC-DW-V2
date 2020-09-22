@@ -5,7 +5,7 @@ const buttonDown = document.getElementById('down');
 const postUrlAPI = "http://localhost:3000/api/teddies/order";
 
 const totalCartCost = document.getElementById('finalCheckout');
-
+let teddyTotalPrice = 0;
 function teddyGet() {   // Fonction principale pour l'affichage du panier
     
     let title = document.querySelector('#checkoutTitle');
@@ -94,7 +94,7 @@ function teddyGet() {   // Fonction principale pour l'affichage du panier
                 const TeddiesTotalPrice = [...document.getElementsByClassName('TeddyTotalPrice-Amount')];
                 // Loop pour chaque prix total dans le panier
                 TeddiesTotalPrice.forEach(teddy => {
-                    let teddyTotalPrice = parseInt(teddy.innerHTML, 10);   
+                    teddyTotalPrice = parseInt(teddy.innerHTML, 10);   
                      // Ceci nous permet de récupérer un "number" au lieu d'un "string"
 
                     finalCheckout += teddyTotalPrice;   
@@ -138,7 +138,7 @@ function closeForm() {  // Fait l'inverse de confirmCart()
   }
   
   
-let form = document.getElementById('postData'); // Déclaration du formulaire, servira pour la validation
+    let form = document.getElementById('postData'); // Déclaration du formulaire, servira pour la validation
   
 
 /************************** FORMULAIRE *******************************/
@@ -149,28 +149,27 @@ let form = document.getElementById('postData'); // Déclaration du formulaire, s
     let myRegexAddress = /^[0-9]{1,5}( [-a-zA-Zàâäéèêëïîôöùûüç]+)+$/;
         
     //on récupère le formulaire depuis le fichier HTML
-    let form = document.querySelector('#contact');
-
+    let gbId = (id) => document.getElementById(id);
     //on appelle toutes les fonctions créées plus bas
-    form.firstName.addEventListener('change', function () {
+    gbId('firstName').addEventListener('change', function () {
         validateInput(this, myRegexText, 'firstName', 'Erreur dans la saisie du Nom');
     });
 
-    form.lastName.addEventListener('change', function () {
+    gbId('lastName').addEventListener('change', function () {
         validateInput(this, myRegexText, 'LastName', 'Erreur dans la saisie du Prénom (pas de chiffres)'
         );
     });
 
-    form.address.addEventListener('change', function () {
+    gbId('address').addEventListener('change', function () {
         validateInput(this, myRegexAddress, 'address', 'Mmmh, vous êtes sûr ? (numéro de voie + nom de la voie)'
         );
     });
 
-    form.city.addEventListener('change', function () {
+    gbId('city').addEventListener('change', function () {
         validateInput(this, myRegexText, 'city', 'Problème dans la saisie');
     });
 
-    form.email.addEventListener('change', function () {
+    gbId('email').addEventListener('change', function () {
         validateInput(this, myRegexEmail, 'email', 'Adresse non valide');
     });
 
@@ -193,7 +192,7 @@ let form = document.getElementById('postData'); // Déclaration du formulaire, s
 /**************** Envoie data ********************/
 
     //création class Contact
-    let form = document.getElementById('contact');
+
     let contact;
     let order;
     let testInput;
@@ -204,42 +203,47 @@ let form = document.getElementById('postData'); // Déclaration du formulaire, s
         } else if ((contact = '')) {
             e.preventDefault();
         } else {
-            contact = {
+            let contact = {
                 firstName: form.firstName.value,
                 lastName: form.lastName.value,
                 address: form.address.value,
                 city: form.city.value,
                 email: form.email.value,
             };
+            let products = [];
+            products = cartItems.map(item => item.id);
+            console.log(products);
 
-            order = {
+
+            let order = {
                 contact: contact,
                 products: products,
             };
 
-            const options = {
-                method: 'POST',
-                body: JSON.stringify(order),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            };
-            fetch('http://localhost:3000/api/teddies/order', options)
-            .then((res) => res.json())
-            .then((res) => {
-                console.log(res);
-                let finalCheckout = document.getElementById('totalPrice');
-                let totalPrice = teddyTotalPrice.innerHTML;
-                let objectSessionStorage = {
-                    prix: totalPrice,
-                    prenom: form.lastName.value,
-                    orderId: res.orderId,
-                };
-
-                let confirmation = JSON.stringify(objectSessionStorage);
-                sessionStorage.setItem('infoCustomer', confirmation);
-                window.location = 'confirmation.html';
-            });
+            sendOrder(order);
     }
-});
-}
+    });
+
+function sendOrder(order) {
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(order),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+    fetch('http://localhost:3000/api/teddies/order', options)
+    .then((res) => res.json())
+    .then((res) => {
+        let totalPrice = teddyTotalPrice;
+        let objectSessionStorage = {
+            prix: totalPrice,
+            prenom: form.lastName.value,
+            orderId: res.orderId,
+        };
+
+        let confirmation = JSON.stringify(objectSessionStorage);
+        sessionStorage.setItem('infoCustomer', confirmation);
+        window.location = 'confirmed-page.html';
+    });
+}    
